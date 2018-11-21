@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Final Udacity News app</string>
+
+
+
+
+    <string name="no_internet_connection">You are currently not connected to the internet.</string>
+
+    <string name="settings_menu_item">Preferences</string>
+
+
+    <!--<string name="settings_order_by_label">Organize by</string>-->
+    <!--<string name="settings_order_by_key" translatable="false">organize_by</string>-->
+    <!--<string name="settings_order_by_default" translatable="false">@string/settings_order_by_arizona_value</string>-->
+
+    <string name="settings_order_by_arizona_label">Oldest</string>
+    <string name="settings_order_by_arizona_value" translatable="false">older stories</string>
+
+    <!--<string name="settings_order_by_most_recent_label">Most Recent</string>-->
+    <!--<string name="settings_order_by_most_recent_value" translatable="false">time</string>-->
+    <string name="no_new_stories">no stories</string>
+    <!--formerly the min magnitude label -->
+    <string name="settings_minimim_page_size_label">Choose pages to display</string>
+    <!--formerly the min magnitude key -->
+    <string name="settings_pages_key" translatable="false">choose pages to show</string>
+    <!--formerly the min magnitude default -->
+    <string name="settings_pages_default" translatable="false">story list</string>
+
+<!--formerly order by label-->
+    <string name="settings_order_by_label">organize By</string>
+    <!--formerly order by key-->
+    <string name="settings_order_by_key" translatable="false">organize by</string>
+    <!--formerly order by default order by magnitude value-->
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_pagesize_value</string>
+
+    <!-- Label for order-by magnitude option [CHAR LIMIT=20] -->
+    <!--formerly order by magnitude label-->
+    <string name="settings_order_by_page_label">pages</string>
+    <!--formerly order by magnitude value-->
+    <string name="settings_order_by_page_value" translatable="false">page</string>
+
+    <!-- Label for order-by most recent option [CHAR LIMIT=20] -->
+    <!--formerly order by most recent label-->
+    <string name="settings_order_by_oldest_label">oldest</string>
+
+    <string name="settings_order_by_most_recent_value" translatable="false"></string>
+    <!--formerly rder by most recent value-->
+    <string name="settings_order_by_oldest_value">oldest</string>
+    <string name="settings_order_by_pagesize_value">pagee</string>
+
+
+</resources>
