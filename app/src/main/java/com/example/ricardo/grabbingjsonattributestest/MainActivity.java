@@ -30,8 +30,9 @@ public class MainActivity extends AppCompatActivity
     private static final String LOG_TAG = MainActivity.class.getName();
 
     private static final String selfdriving =
-            "https://content.guardianapis.com/search?api-key=90d1ab3e-1584-49e2-9c72-dc09c9e75d3b";
-    private static final int LOADER = 1;
+"https://content.guardianapis.com/search?from-date=2018-01-10&to-date=2018-04-10&show-tags=contributor&q=self%20driving%20car&api-key=90d1ab3e-1584-49e2-9c72-dc09c9e75d3b
+";
+            private static final int LOADER = 1;
 
     private AcessibilityAdapter mAdapter;
 
