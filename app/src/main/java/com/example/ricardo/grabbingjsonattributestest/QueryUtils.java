@@ -48,7 +48,6 @@ public final class QueryUtils {
 
         URL url = createUrl(requestUrl);
 
-        // Perform HTTP request to the URL and receive a JSON response back
         String jsonResponse = null;
         try {
             jsonResponse = makeHttpRequest(url);
@@ -142,13 +141,10 @@ JSONObject object = new JSONObject( newsjson);
                 String webtitle = jsonObject.getString("webTitle");
                 JSONArray tag = jsonObject.getJSONArray("tags");
 
-                // Extract the value for the key called "place"
                 String section = jsonObject.getString("sectionName");
 
-                // Extract the value for the key called "time"
                 String publication = jsonObject.getString("webPublicationDate");
 
-                // Extract the value for the key called "url"
                 String url = jsonObject.getString("apiUrl");
 
                 String author = "";

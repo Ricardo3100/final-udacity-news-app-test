@@ -20,10 +20,7 @@ import android.content.Context;
 
 import java.util.List;
 
-/**
- * Loads a list of earthquakes by using an AsyncTask to perform the
- * network request to the given URL.
- */
+
 public class BlindLoader extends AsyncTaskLoader<List<Accessibility>> {
 
     public BlindLoader(Context context) {
@@ -37,14 +34,8 @@ public class BlindLoader extends AsyncTaskLoader<List<Accessibility>> {
 
     public static class EarthquakeLoader extends AsyncTaskLoader <List <Accessibility>> {
 
-        /**
-         * Tag for log messages
-         */
         private static final String LOG_TAG = BlindLoader.class.getName();
 
-        /**
-         * Query URL
-         */
         private String mUrl;
 
         /**
@@ -63,16 +54,12 @@ public class BlindLoader extends AsyncTaskLoader<List<Accessibility>> {
             forceLoad();
         }
 
-        /**
-         * This is on a background thread.
-         */
         @Override
         public List <Accessibility> loadInBackground() {
             if (mUrl == null) {
                 return null;
             }
 
-            // Perform the network request, parse the response, and extract a list of earthquakes.
             List <Accessibility> accessibilities = QueryUtils.fetchAcessibilityData(mUrl);
             return accessibilities;
         }
