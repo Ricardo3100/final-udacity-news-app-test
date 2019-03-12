@@ -30,9 +30,8 @@ public class MainActivity extends AppCompatActivity
     private static final String LOG_TAG = MainActivity.class.getName();
 
     private static final String selfdriving =
-"https://content.guardianapis.com/search?from-date=2018-01-10&to-date=2018-04-10&show-tags=contributor&q=self%20driving%20car&api-key=90d1ab3e-1584-49e2-9c72-dc09c9e75d3b
-";
-            private static final int LOADER = 1;
+"https://content.guardianapis.com/search?";
+    private static final int LOADER = 1;
 
     private AcessibilityAdapter mAdapter;
 
@@ -88,8 +87,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-        if (key.equals(getString(R.string.settings_pages_key)) ||
-                key.equals(getString(R.string.settings_order_by_key))){
+        if (key.equals(getString(R.string.settings_page_size_key)) ){
             mAdapter.clear();
 
             getLoaderManager().restartLoader(LOADER, null, this);
@@ -98,37 +96,37 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public Loader<List<Accessibility>> onCreateLoader(int i, Bundle bundle) {
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         // getString retrieves a String value from the preferences. The second parameter is the default value for this preference.
-        String pagesize = sharedPrefs.getString(
-                getString(R.string.settings_pages_key),
-                getString(R.string.settings_pages_default));
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-        String orderBy  = sharedPrefs.getString(
-                getString(R.string.settings_order_by_key),
-                getString(R.string.settings_pages_default));
+        // getString retrieves a String value from the page size story list preferences. The second parameter is the default value for this preference.
+              String StoryList = sharedPrefs.getString(
+                getString(R.string.settings_page_size_key),
+                getString(R.string.settings_page_size_default));
 
-        String organizeby  = sharedPrefs.getString(
-                        getString(R.string.settings_order_by_key),
-                        getString(R.string.settings_pages_default));
-        ;
+
+
+
+
         Uri baseUri = Uri.parse(selfdriving);
         Uri.Builder uriBuilder = baseUri.buildUpon();
+        uriBuilder.appendQueryParameter("api-key", "test");
 
 
-        uriBuilder.appendQueryParameter("order-by", orderBy);
-        uriBuilder.appendQueryParameter("page-size", pagesize);
+        uriBuilder.appendQueryParameter("order-by", "newest");
+
+        uriBuilder.appendQueryParameter("page-size", StoryList);
                 uriBuilder.appendQueryParameter("show-references", "author");
                 uriBuilder.appendQueryParameter("show-tags", "contributor");
-                uriBuilder.appendQueryParameter("q", "games");
-        uriBuilder.appendQueryParameter("API-KEY", "TEST");
+                uriBuilder.appendQueryParameter("q", "selfdriving");
 
 
-        return new BlindLoader.EarthquakeLoader(this, uriBuilder.toString());
+        return new BlindLoader.Loader(this, uriBuilder.toString());
     }
     public void onLoadFinished(Loader<List<Accessibility>> loader, List <Accessibility> accessibility) {
-
+//the loading indicator set visibility dissapears with view.gone
+// onc ce the app finishes loading
         View loadingIndicator = findViewById(R.id.loading_indicator);
         loadingIndicator.setVisibility(View.GONE);
         mEmptyStateTextView.setText(R.string.no_new_stories);
