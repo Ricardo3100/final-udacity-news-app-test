@@ -133,7 +133,7 @@ public final class QueryUtils {
 
             JSONObject baseJson = new JSONObject(newsjson);
             JSONArray acess = baseJson.getJSONObject("response").getJSONArray("results");
-JSONObject object = new JSONObject( newsjson);
+            JSONObject object = new JSONObject( newsjson);
 
             for (int i = 0; i < acess.length(); i++) {
 
@@ -145,7 +145,7 @@ JSONObject object = new JSONObject( newsjson);
 
                 String publication = jsonObject.getString("webPublicationDate");
 
-                String url = jsonObject.getString("apiUrl");
+                String url = jsonObject.getString("webUrl");
 
                 String author = "";
                 if (tag.length() != 0) {
@@ -166,7 +166,7 @@ JSONObject object = new JSONObject( newsjson);
             String dateToDisplay = dateFormatter.format(dateObject);
         } catch (JSONException e) {
 
-            Log.e("QueryUtils", "Problem parsing the earthquake JSON results", e);
+            Log.e("QueryUtils", "Problem parsing the Query JSON results", e);
         }
 
         return accessibilities;

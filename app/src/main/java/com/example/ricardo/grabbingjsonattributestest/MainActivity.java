@@ -1,4 +1,5 @@
 
+
 package com.example.ricardo.grabbingjsonattributestest;
 
 import android.app.LoaderManager;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity
     private static final String LOG_TAG = MainActivity.class.getName();
 
     private static final String selfdriving =
-"https://content.guardianapis.com/search?";
+            "https://content.guardianapis.com/search?";
     private static final int LOADER = 1;
 
     private AcessibilityAdapter mAdapter;
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         // getString retrieves a String value from the page size story list preferences. The second parameter is the default value for this preference.
-              String StoryList = sharedPrefs.getString(
+        String StoryList = sharedPrefs.getString(
                 getString(R.string.settings_page_size_key),
                 getString(R.string.settings_page_size_default));
 
@@ -115,11 +116,11 @@ public class MainActivity extends AppCompatActivity
 
 
         uriBuilder.appendQueryParameter("order-by", "newest");
-
+//    The story List query will allow you to search by page size
         uriBuilder.appendQueryParameter("page-size", StoryList);
-                uriBuilder.appendQueryParameter("show-references", "author");
-                uriBuilder.appendQueryParameter("show-tags", "contributor");
-                uriBuilder.appendQueryParameter("q", "games");
+        uriBuilder.appendQueryParameter("show-references", "author");
+        uriBuilder.appendQueryParameter("show-tags", "contributor");
+        uriBuilder.appendQueryParameter("q", "driverless");
 
 
         return new BlindLoader.Loader(this, uriBuilder.toString());
@@ -165,5 +166,3 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 }
-
-
