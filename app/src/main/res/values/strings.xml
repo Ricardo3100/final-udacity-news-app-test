@@ -1,28 +1,12 @@
 <resources>
     <string name="app_name">Final Udacity News app</string>
     <string name="no_internet_connection">You are currently not connected to the internet.</string>
-
     <string name="settings_menu_item">Preferences</string>
-
-    <string name="settings_order_by_arizona_label">Oldest</string>
-    <string name="settings_order_by_arizona_value" translatable="false">older stories</string>
-
-    <string name="no_new_stories">no stories</string>
-    <string name="settings_minimim_page_size_label">Choose pages to display</string>
-    <string name="settings_pages_key" translatable="false">choose pages to show</string>
-    <string name="settings_pages_default" translatable="false">story list</string>
-
+    <string name="no_new_stories">no stories to read at this time, please check back later.</string>
+    <string name="settings_page_size_key" translatable="false">Choose How Many Stories To Read.</string>
+    <string name="settings_page_size_default" translatable="false">1</string>
     <string name="settings_order_by_label">organize By</string>
     <string name="settings_order_by_key" translatable="false">organize by</string>
     <string name="settings_order_by_default" translatable="false">@string/settings_order_by_pagesize_value</string>
-
-    <string name="settings_order_by_Newest_label">Newest</string>
-    <string name="settings_order_by_newest_value" translatable="false">newest</string>
-
-
-    <string name="settings_order_by_oldest_label">oldest</string>
-
-    <string name="settings_order_by_most_recent_value" translatable="false"></string>
-    <string name="settings_order_by_oldest_value">oldest</string>
     <string name="settings_order_by_pagesize_value">pagee</string>
 </resources>

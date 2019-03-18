@@ -119,14 +119,14 @@ public class MainActivity extends AppCompatActivity
         uriBuilder.appendQueryParameter("page-size", StoryList);
                 uriBuilder.appendQueryParameter("show-references", "author");
                 uriBuilder.appendQueryParameter("show-tags", "contributor");
-                uriBuilder.appendQueryParameter("q", "selfdriving");
+                uriBuilder.appendQueryParameter("q", "games");
 
 
         return new BlindLoader.Loader(this, uriBuilder.toString());
     }
     public void onLoadFinished(Loader<List<Accessibility>> loader, List <Accessibility> accessibility) {
 //the loading indicator set visibility dissapears with view.gone
-// onc ce the app finishes loading
+// oncce the app finishes loading
         View loadingIndicator = findViewById(R.id.loading_indicator);
         loadingIndicator.setVisibility(View.GONE);
         mEmptyStateTextView.setText(R.string.no_new_stories);

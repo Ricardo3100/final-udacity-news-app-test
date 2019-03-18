@@ -32,19 +32,19 @@ public class BlindLoader extends AsyncTaskLoader<List<Accessibility>> {
         return null;
     }
 
-    public static class EarthquakeLoader extends AsyncTaskLoader <List <Accessibility>> {
+    public static class Loader extends AsyncTaskLoader <List <Accessibility>> {
 
         private static final String LOG_TAG = BlindLoader.class.getName();
 
         private String mUrl;
 
         /**
-         * Constructs a new {@link EarthquakeLoader}.
+         * Constructs a new {@link Loader}.
          *
          * @param context of the activity
          * @param url     to load data from
          */
-        public EarthquakeLoader(Context context, String url) {
+        public Loader(Context context, String url) {
             super(context);
             mUrl = url;
         }

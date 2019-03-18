@@ -53,7 +53,7 @@ public class SettingsActivity extends AppCompatActivity {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.settings_main);
-//            the newest story preference will populate the newest stories
+//            the number of stories will populate
             Preference StoryList = findPreference(getString(R.string.settings_page_size_key));
             bindPreferenceSummaryToValue(StoryList);
 
